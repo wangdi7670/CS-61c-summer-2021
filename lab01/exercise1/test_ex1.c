@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "ex1.h"
+#include "ex1.c"
+
 
 int main(int argc, char **argv) {
     printf("Running tests...\n\n");
@@ -15,6 +17,10 @@ int main(int argc, char **argv) {
     assert(num_z == 0);
 
     /* TODO: Think of a scenario that is not tested by the current test cases. Create one additional test case to test this scenario. */
+    char *s1 = " # ";
+    int num3 = num_occurrences(s1, ' ');
+    assert(num3 == 2);
+    // printf("str[1] = %c\n", str[1]);
 
     printf("Congrats! If you have made it to this line, your Part 1 Test cases are all passing!\n");
 
@@ -36,6 +42,12 @@ int main(int argc, char **argv) {
     assert(dna_seq_2.T_count == 0);
 
     /* TODO: Think of a scenario that is not tested by the current test cases. Create one additional test case to test this scenario. */
+    strcpy(dna_seq_2.sequence, "QWERTY");
+    compute_nucleotide_occurrences(&dna_seq_2);
+    assert(dna_seq_2.A_count == 0);
+    assert(dna_seq_2.C_count == 0);
+    assert(dna_seq_2.G_count == 0);
+    assert(dna_seq_2.T_count == 1);
 
     printf("Congrats! If you have made it to this line, your Part 2 Test cases are all passing!\n");
 
