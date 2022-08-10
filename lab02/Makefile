@@ -14,7 +14,7 @@ test_linked_list.o: test_linked_list.c linked_list.h
 
 
 bit_ops: bit_ops.c test_bit_ops.c
-	$(CC) -o bit_ops bit_ops.c test_bit_ops.c
+	$(CC) -o bit_ops bit_ops.c test_bit_ops.c -lm
 
 vector: vector.c test_vector.c
 	$(CC) -o vector vector.c test_vector.c
