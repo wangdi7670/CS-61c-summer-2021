@@ -17,7 +17,7 @@ bit_ops: bit_ops.c test_bit_ops.c
 	$(CC) -o bit_ops bit_ops.c test_bit_ops.c -lm
 
 vector: vector.c test_vector.c
-	$(CC) -o vector vector.c test_vector.c
+	$(CC) $(CFLAGS) -o vector vector.c test_vector.c
 
 clean:
 	rm linked_list linked_list.o test_linked_list.o bit_ops vector
